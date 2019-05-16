@@ -1,0 +1,82 @@
+<html>
+	<head>
+			<title> Login Page </title>
+			
+
+			<style>
+				
+			input[type=text], input[type=password]
+			{
+  			width: 100%;
+  			padding: 12px 20px;
+  			margin: 10px 0;
+  			border-style:inset;
+  			
+			
+			}
+
+		input[type=submit]
+		 {
+  		width: 100%;
+  		background-color: green;
+  		color: white;
+  		padding: 14px 20px;
+  		margin: 10px 0;
+		}
+
+		input[type=submit]:hover
+		 {
+  		background-color: black;
+  		margin:10px 0;
+		}
+
+		div
+		 {
+		 	position:relative;
+		 	top:200px;
+		 	left:500px;
+		 	width:50%;
+  		background-color: #f2f2f2;
+  		padding: 20px;
+  		border-style:inset;
+  		border-color:black;
+		}
+			
+			</style>
+		</head>
+		<script>
+				function validation()
+				{
+					var name=document.NewForm.abcd.value;
+					var passwd=document.NewForm.pass.value;
+					if(name==null || name=="")
+					{
+							document.getElementById('error').innerHTML = "Enter The name";
+						return false;
+					}	
+					if(passwd!="abcd")
+					{
+						
+						document.getElementById('bug').innerHTML = "Wrong password";
+						return false;
+					}
+					
+				}
+			</script>
+
+		<body style="background-color:grey">
+			
+
+			<div class='f1'>
+			<form name='NewForm' action='Welcome.html' onsubmit="return validation()">
+				Name:<input type='text' name='abcd'placeholder="enter name" value="" ><br>
+				<p id ="error" style="color: red;"></p>
+				Password:<input type='password' name='pass' placeholder="Enter password" ><br>
+				<a href="#">Forgot Password?</a><br>
+				<p id ="bug" style="color: red;"></p>
+
+				<input type='submit' value='submit' style="margin:10px">
+			</form></div>
+			
+		</body>
+</html>

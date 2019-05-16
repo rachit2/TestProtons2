@@ -1,0 +1,253 @@
+<html>
+	<head>
+			<title> registration Page </title>
+			<style>
+			input[type=text], input[type=password]
+			{
+  			width: 100%;
+  			padding: 12px 20px;
+  			margin: 10px 0;
+			}
+		input[type=submit]
+		 {
+  		width:-20%;
+  		background-color: green;
+  		color: white;
+  		padding: 14px 20px;
+  		margin: 10px 0;
+		}
+		input[type=submit]:hover
+		 {
+  		background-color: black;
+  		margin:10px 0;
+		}
+input[type=button]
+		 {
+  		width:-20%;
+  		background-color: green;
+  		color: white;
+  		padding: 14px 20px;
+  		margin: 10px 0;
+		}
+		input[type=button]:hover
+		 {
+  		background-color: black;
+  		margin:10px 0;
+		}
+		div
+		 {
+		 	position:relative;
+		 	top:30px;
+		 	left:500px;
+		 	width:50%;
+  		background-color: #f2f2f2;
+  		padding: 20px;
+  		border-style:inset;
+  		border-color:black;
+		}
+		</style>
+		</head>
+		<script>
+				function nameFocus()
+				{
+					var name =document.NewForm.abcd.value;
+					if(name==null ||name =="")
+					{
+							document.getElementById('name').innerHTML = "Enter The name";
+						return false;
+					}
+					else
+					{
+							document.getElementById('name').innerHTML = "";
+							
+					}
+
+				}
+				function AddFocus()
+				{
+					var add =document.NewForm.address.value;
+					if(add==null ||add =="")
+					{
+							document.getElementById('address').innerHTML = "Enter The address ";
+						return false;
+					}
+					else
+					{
+							document.getElementById('address').innerHTML = "";
+							
+					}
+					
+						
+				}
+				function EmailFocus()
+				{
+					var em =document.NewForm.email.value;
+
+					var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+					
+					var a=em.indexOf("@");  
+					var b=em.lastIndexOf(".");  
+					if(em==null ||em =="")
+					{
+
+							document.getElementById('email').innerHTML = "Enter The Email";
+						return false;
+					}
+					else
+					{
+							document.getElementById('email').innerHTML = "";
+							
+					}
+					  
+					if(a<1 || b<a+2 || b+2>=em.length){
+						document.getElementById('email').innerHTML = "Enter valid email address";
+						 	return false;  	
+						}
+					}
+				function MobileFocus()
+				{
+					var mo =document.NewForm.mobile.value;
+					if(mo==null ||mo =="")
+					{
+							document.getElementById('mobile').innerHTML = "Enter The moblie number";
+						return false;
+					}
+					else if(mo.length<10 || isNaN(mo))
+					{
+							document.getElementById('mobile').innerHTML = "Enter valid moblie number, should contain 10 numeric digits";
+						return false;
+					}
+					else
+					{
+							document.getElementById('mobile').innerHTML = "";
+							
+					}
+						
+				}
+				function PassFocus()
+				{
+					var Pass=document.NewForm.pass.value;
+					if(Pass==null ||Pass =="")
+					{
+							document.getElementById('passwd').innerHTML = "Enter The Password";
+						return false;
+					}
+					else
+					{
+							document.getElementById('passwd').innerHTML = "";
+							
+					}
+						
+				}
+				function PassReFocus()
+				{
+					var re=document.NewForm.repass.value;
+					var Pass=document.NewForm.pass.value;
+					
+					if(re==null ||re =="")
+					{
+							document.getElementById('repasswd').innerHTML = "Enter The password";
+						return false;
+					}
+					else if(re!=Pass)
+					{
+								document.getElementById('repasswd').innerHTML = " password do not match";
+						return false;
+					
+					}
+					else
+					{
+							document.getElementById('repasswd').innerHTML = "";
+							
+					}
+						
+				}
+				
+				function register()
+				{
+					
+				
+					var re=document.NewForm.repass.value;
+					var name =document.NewForm.abcd.value;
+					var Pass=document.NewForm.pass.value;
+					var mo =document.NewForm.mobile.value;
+					var em =document.NewForm.email.value;
+					var add =document.NewForm.address.value;
+					var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+					var a=em.indexOf("@");  
+					var b=em.lastIndexOf(".");  
+					var na=true; var rep=true; var p=true; var m=true; var e=true; var ad=true; 
+					if(name==null ||name =="")
+					{
+						
+							document.getElementById('name').innerHTML = "Enter The name";
+							na=false;
+							return false;
+					}
+					 if(add==null ||add ==""){ 
+						document.getElementById('address').innerHTML = "Enter The address ";
+					ad=false;
+						return false;
+					}
+				if(em==null ||em =="" ||em!=regex)
+					{
+							document.getElementById('email').innerHTML = "Enter The valid Email address";
+						e=false;
+						return false;
+
+					}					
+					 if(mo==null ||mo ==""|| mo.length<10 || isNaN(mo))
+					{
+							document.getElementById('mobile').innerHTML = "Enter The valid moblie number, should only ontain 10 numeric digit";
+						m=false;
+						return false;
+					}
+					if(Pass==null ||Pass =="")
+					{
+							document.getElementById('passwd').innerHTML = "Enter The Password";
+						p=false;
+						return false;
+					}
+				
+					if(re==null ||re =="")
+					{
+							document.getElementById('repasswd').innerHTML = "Enter The password";
+						rep=false;
+						return false;
+					}
+					 if(na==false||ad==false||e==false||m==false||p==false||rep==false)
+					 {
+							alert("Bug");
+					 }
+								
+				}	
+								
+				
+				
+			</script>
+
+		<body style="background-color:grey">
+			
+
+			<div class='f1'>
+			<form name='NewForm' action='home.html'>
+				Name:<input type='text' name='abcd'placeholder="enter name" value="" onfocusout="nameFocus()"><br>
+				<p id ="name" style="color: red"></p>
+				Address:<input type='text' name='address'placeholder="EX:- 68 abcd colony" value="" onfocusout="AddFocus()"><br>
+				<p id ="address" style="color: red"></p>
+				Email:<input type='text' name='email'placeholder="Ex:-abcd@gmail.com" value="" onfocusout="EmailFocus()"><br>
+				<p id ="email" style="color: red"></p>
+				Mobile:<input type='text' name='mobile'placeholder="Ex:-9999999999" value="" onfocusout="MobileFocus()"><br>
+				<p id ="mobile" style="color: red"></p>
+				Password:<input type='password' name='pass' placeholder="Enter password" onfocusout="PassFocus()"><br>
+				<p id ="passwd" style="color: red"></p>
+				Re-enter Password:<input type='password' name='repass' placeholder="Re-Enter password" onfocusout="PassReFocus()" ><br>
+				<p id ="repasswd" style="color: red"></p>
+				<input type='submit' value='register' onclick="return register()" style="margin:10px" >
+				<a href="login.html"><input type="button" value='login' style="margin:10px"></button></a><br>
+				<a href="login.html"> already registered?</a>
+
+			</form></div>
+			
+		</body>
+</html>
